@@ -7,6 +7,7 @@ some useful notes:
 - System: Arch Linux
 - Window Manager: sway
 - Terminal: foot
+- Terminal Multiplexer: tmux
 - Status bar: waybar
 - Browser: Firefox
 - Code Editor: neovim
