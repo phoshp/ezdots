@@ -229,7 +229,9 @@ gaps outer 0
 default_border pixel 1
 default_floating_border pixel 1
 for_window [urgent="latest"] focus
-for_window [class=".*"] opacity 0.9
+for_window [app_id="Chromium"] opacity 0.9
+for_window [app_id="firefox"] opacity 0.9
+for_window [app_id="thunar"] opacity 0.9
 for_window [class=".foot"] opacity 1.0
 for_window [title="^.*"] border pixel 1, title_format "<b> %title </b>"
 focus_on_window_activation focus
