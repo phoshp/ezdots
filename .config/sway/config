@@ -119,10 +119,11 @@ bindsym $mod+Shift+Right move right
 
 # screenshot
 set $grimshot /usr/share/sway/grimshot
-bindsym Print exec $grimshot save active
-bindsym $mod+Print exec $grimshot save area --notify
-bindsym $mod+Shift+Print exec $grimshot save output
-bindsym $mod+Ctrl+Print exec $grimshot save window
+bindsym Print exec $grimshot --notify save active
+bindsym $mod+Print exec $grimshot --notify save area
+bindsym $mod+Shift+Print exec $grimshot --notify save output
+bindsym $mod+Ctrl+Print exec $grimshot --notify save window
+
 
 # OSD server
 exec_always swayosd-server
