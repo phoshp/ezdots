@@ -4,11 +4,12 @@
     font-weight: 400;
     font-style: normal;
     font-size: 1.2rem;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(90, 36, 120, 0.4);
+    box-shadow: inset 2px 2px 12px 2px #c576ff;
     color: white;
     transition-property: background-color;
     transition-duration: .5s;
@@ -36,7 +37,12 @@ button:hover {
 
 #workspaces {
     padding: 2px 8px;
-    background: rgb(90, 36, 120);
+    border-radius: 0;
+    background: rgba(90, 36, 120, 0.4);
+}
+
+#workspaces button {
+    margin: 0 2px;
 }
 
 #workspaces button:hover {
