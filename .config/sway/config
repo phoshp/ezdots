@@ -16,10 +16,9 @@ set $right l
 # Your preferred terminal emulator
 set $term footclient
 set $filemanager thunar
+set $browser firefox
 # Your preferred application launcher
 set $menu rofi -show drun | xargs swaymsg exec --
-
-exec foot -s
 
 input "type:keyboard" {
     xkb_layout us,tr
@@ -35,28 +34,30 @@ input "type:touchpad" {
 
 input "type:mouse" {
     accel_profile flat
-    #speed_multipOlier 0.3
 }
 
-font pango:FontAwesome 11
+font Liberation Mono 12
 # font pango:JetBrainsMonoNerdFont - Medium 11
 
 ### Output configuration
-include outputs
 include /etc/sway/config.d/*
+include outputs
 
 ### Idle configuration
 
+exec foot -s
 exec swayidle -w \
           timeout 300 'bash $HOME/.config/sway/lock.sh' \
           timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'bash $HOME/.config/sway/lock.sh'
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec ~/.azotebg
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet --indicator
 # Notification Daemon
 exec swaync
 exec batsignal
+exec blueman-applet
 
 # exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
@@ -74,7 +75,7 @@ bindsym $mod+BackSpace input "type:keyboard" xkb_switch_layout next
 bindsym $mod+Return exec $term
 bindsym $mod+a exec $filemanager
 bindsym $mod+d exec $menu
-bindsym $mod+w exec firefox
+bindsym $mod+w exec $browser
 
 # Kill focused window
 bindsym $mod+q kill
@@ -123,7 +124,6 @@ bindsym Print exec $grimshot --notify save active
 bindsym $mod+Print exec $grimshot --notify save area
 bindsym $mod+Shift+Print exec $grimshot --notify save output
 bindsym $mod+Ctrl+Print exec $grimshot --notify save window
-
 
 # OSD server
 exec_always swayosd-server
@@ -230,13 +230,13 @@ gaps outer 0
 default_border pixel 1
 default_floating_border pixel 1
 for_window [urgent="latest"] focus
-for_window [app_id="Chromium"] opacity 0.9
+for_window [class="Chromium"] opacity 0.9
 for_window [app_id="firefox"] opacity 0.9
 for_window [app_id="thunar"] opacity 0.9
+for_window [class=".foot"] opacity 1.0
 for_window [title="^.*"] border pixel 1, title_format "<b> %title </b>"
 focus_on_window_activation focus
 
 bar {
     swaybar_command waybar
 }
-
