@@ -76,6 +76,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+a exec $filemanager
 bindsym $mod+d exec $menu
 bindsym $mod+w exec $browser
+bindsym $mod+Escape exec nwg-bar
 
 # Kill focused window
 bindsym $mod+q kill
