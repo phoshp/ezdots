@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    text-shadow: 2px 2px 2px #000000;
+    font-weight: 600;
     font-family: Liberation Mono, "Symbols Nerd Font";
 }
 
@@ -170,13 +170,12 @@ window#waybar.hidden {
 }
 
 #battery.warning:not(.charging) {
-    background-color: #ffbe61;
     color: black;
+    background-color: #ffbe61;
 }
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
