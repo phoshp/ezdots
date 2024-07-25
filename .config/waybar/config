@@ -1,6 +1,6 @@
 {
     "margin": "8 8 5 8",
-    "modules-left": ["sway/workspaces", "custom/pacman", "sway/language", "cpu", "memory", "disk", "sway/window"],
+    "modules-left": ["custom/archbtw", "sway/workspaces", "cpu", "memory", "disk", "sway/language", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "backlight", "temperature", "battery", "tray"],
 
@@ -36,14 +36,8 @@
         "format": " {percentage_used}%"
     },
 
-    "custom/pacman": {
-        "format": " {} |",
-        "interval": 3600,                     			// every hour
-        "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",	// # of updates
-        "exec-if": "exit 0",                  			// always run; consider advanced run conditions
-        "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar", // update system
-        "signal": 8,
-        "tooltip": false,
+    "custom/archbtw": {
+        "format": "",
     },
 
     "sway/mode": {
